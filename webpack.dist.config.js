@@ -54,14 +54,14 @@ module.exports = {
       loader: 'babel-loader'
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 version'
     }, {
       test: /\.json/,
       exclude: /node_modules/,
       loader: 'json-loader'
     }, {
       test: /\.scss/,
-      loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+      loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded!autoprefixer-loader?browsers=last 2 version'
     }, {
       test: /\.(png|jpg|woff|woff2)$/,
       loader: 'url-loader?limit=8192'
