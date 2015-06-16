@@ -2,3 +2,16 @@
   width: 100%;
   height: 100%;
 }
+
+.author {
+  position: absolute;
+  width: 250px;
+  padding: 15px;
+  font-size: 14px;
+  top: 20px;
+}
+
+.author a {
+  color: #539BCE;
+  text-decoration: none;
+}
