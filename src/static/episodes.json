@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "year": 2011,
+    "episodes": [
+      "Winter Is Coming",
+      "The Kingsroad",
+      "Lord Snow",
+      "Cripples, Bastards, and Broken Things",
+      "The Wolf and the Lion",
+      "A Golden Crown",
+      "You Win or You Die",
+      "The Pointy End",
+      "Baelor",
+      "Fire and Blood"
+    ]
+  },
+  {
+    "id": 2,
+    "year": 2012,
+    "episodes": [
+      "The North Remembers",
+      "The Night Lands",
+      "What Is Dead May Never Die",
+      "Garden of Bones",
+      "The Ghost of Harrenhal",
+      "The Old Gods and the New",
+      "A Man Without Honor",
+      "The Prince of Winterfell",
+      "Blackwater",
+      "Valar Morghulis"
+    ]
+  },
+  {
+    "id": 3,
+    "year": 2013,
+    "episodes": [
+      "Valar Dohaeris",
+      "Dark Wings, Dark Words",
+      "Walk of Punishment",
+      "And Now His Watch Is Ended",
+      "Kissed by Fire",
+      "The Climb",
+      "The Bear and the Maiden Fair",
+      "Second Sons",
+      "The Rains of Castamere",
+      "Mhysa"
+    ]
+  },
+  {
+    "id": 4,
+    "year": 2014,
+    "episodes": [
+      "Two Swords",
+      "The Lion and the Rose",
+      "Breaker of Chains",
+      "Oathkeeper",
+      "First of His Name",
+      "The Laws of Gods and Men",
+      "Mockingbird",
+      "The Mountain and the Viper",
+      "The Watchers on the Wall",
+      "The Children"
+    ]
+  },
+  {
+    "id": 5,
+    "year": 2015,
+    "episodes": [
+      "The Wars to Come",
+      "The House of Black and White",
+      "High Sparrow",
+      "Sons of the Harpy",
+      "Kill the Boy",
+      "Unbowed, Unbent, Unbroken",
+      "The Gift",
+      "Hardhome",
+      "The Dance of Dragons",
+      "Mother's Mercy"
+    ]
+  }
+]

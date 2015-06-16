@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+$color-bg-dark: #fff;
+$color-bg-light: #555;
+$color-text-light: #555;
+$color-text-dark: #fff;
+
+
+body {
+  background-color: $color-bg-dark;
+  color: $color-text-light;
+}
+
+.got-table {
+  width: 100%;
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: 13px;
+  text-rendering: geometricPrecision;
+}
+
+.book-title {
+  display: inline-block;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+
+.chapter-title {
+  display: inline-block;
+  width: 20px;
+  height: 150px;
+  position: relative;
+  transition: all ease-in-out .2s;
+  span {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    bottom: 65px;
+    left: -63px;
+    margin-bottom: 10px;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+  }
+}
+.episodes-list {
+  width: 250px;
+  margin-top: 180px;
+  float: left;
+}
+
+.episode-row {
+  position: relative;
+  height:20px;
+}
+
+.episode-title {
+  line-height: 21px;
+  height: 20px;
+  width:250px;
+  text-align: right;
+  padding-right: 10px;
+  transition: all ease-in-out .2s;
+}
+
+.relations-table {
+  position: relative;
+}
+
+.relation-block {
+  float: left;
+  height: 20px;
+  width: 20px;
+  border: 4px solid $color-bg-dark;
+  border-radius: 50%;
+  cursor: crosshair;
+  transition: border-width ease-in-out .2s;
+  position: absolute;
+  &:hover {
+    border-width: 1px;
+  }
+  .relation-info {
+    color: $color-text-dark;
+    background-color: $color-bg-light;
+    position: absolute;
+    z-index: 2;
+    left: 21px;
+    top: 1px;
+    box-shadow: 1px 1px 1px #666;
+    font-size: 14px;
+    line-height: 20px;
+    width: 200px;
+    padding: 10px;
+    white-space: normal;
+  }
+}
+
+.scrolling-data {
+  margin-left: 250px;
+  white-space: nowrap;
+  overflow: scroll;
+  width: calc(100vw - 250px);
+  position: absolute;
+}
+
+.book-1 {
+  color: #fff;
+  background-color: #539BCE;
+}
+.book-2 {
+  color: #fff;
+  background-color: #F0B42F;
+}
+.book-3 {
+  color: #fff;
+  background-color: #AAA549;
+}
+.book-4 {
+  color: #fff;
+  background-color: #E30004;
+}
+.book-5 {
+  color: #fff;
+  background-color: #BBB6B1;
+}
+.book-6 {
+  color: #fff;
+  background-color: #96B2B6;
+}
