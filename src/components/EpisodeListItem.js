@@ -2,25 +2,25 @@
 
 var React = require('react/addons');
 var Reflux = require('reflux');
-var GotStore = require('../stores/GotStore');
 
+var GotStore = require('../stores/GotStore');
 var getChapterBook = require('../helpers/utils').getChapterBook;
 
 var ChaptersListItem = React.createClass({
   mixins: [Reflux.connect(GotStore, 'active')],
   _isActive: function () {
     return this.state.active &&
-      this.state.active.relation.chapter.id === this.props.chapter.id &&
+      this.state.active.relation.episode.id === this.props.episode.id &&
       this.state.active.show;
   },
   render: function () {
-    var classes = "chapter-title";
+    var classes = "episode-title";
     if (this._isActive()) {
-      classes += " book-" + getChapterBook(this.props.chapter.id);
+      classes += " book-" + getChapterBook(this.props.episode.id);
     }
     return (
       <div className={classes}>
-        <span>{this.props.chapter.title}</span>
+        {this.props.episode.title}
       </div>
     );
   }

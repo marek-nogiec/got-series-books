@@ -10,24 +10,8 @@ var EpisodesList = require('./EpisodesList');
 // CSS
 require('styles/GotTable.scss');
 
-// Static
-var books = require('../static/chapters.json');
-var episodes = require('../static/episodes.json');
-var relations = require('../static/relations.json');
-
-function getData () {
-  return {
-    books: books,
-    episodes: episodes
-  };
-}
-
-class GotTable extends React.Component {
-  constructor () {
-    super();
-    this.state = getData();
-  }
-  render () {
+var GotTable = React.createClass({
+  render: function () {
     return (
       <div className="got-table">
         <EpisodesList />
@@ -39,6 +23,6 @@ class GotTable extends React.Component {
       </div>
     );
   }
-}
+});
 
 module.exports = GotTable;

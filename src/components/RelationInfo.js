@@ -9,23 +9,19 @@ function getPrettyEpisodeFormat (episodeId) {
   return season + "x" + episode;
 }
 
-class RelationInfo extends React.Component {
-  constructor (props) {
-    super();
-    this.state = props;
-  }
-  render () {
+var RelationInfo = React.createClass({
+  render: function () {
     return (
       <div className="relation-info">
         <div className="relation-info-episode">
-          Chapter: {this.state.chapter.title}
+          Chapter: {this.props.chapter.title}
         </div>
         <div className="relation-info-chapter">
-          Episode: {this.state.episode.title} ({getPrettyEpisodeFormat(this.state.episode.id)})
+          Episode: {this.props.episode.title} ({getPrettyEpisodeFormat(this.props.episode.id)})
         </div>
       </div>
     );
   }
-}
+});
 
 module.exports = RelationInfo;

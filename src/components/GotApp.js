@@ -7,18 +7,15 @@ var GotTable = require('./GotTable');
 require('normalize.css');
 require('../styles/main.css');
 
-class GotApp extends React.Component {
-  constructor () {
-    super();
-  }
-  render () {
+var GotApp = React.createClass({
+  render: function () {
     return (
       <div className='main'>
         <GotTable></GotTable>
       </div>
     );
   }
-}
+});
 
 React.render(<GotApp />, document.getElementById('content')); // jshint ignore:line
 

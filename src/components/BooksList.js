@@ -1,19 +1,13 @@
 'use strict';
 
 var React = require('react/addons');
+var GotData = require('../services/GotData');
 
-// Static
-var booksData = require('../static/chapters.json');
-var episodes = require('../static/episodes.json');
-var relations = require('../static/relations.json');
+var _books = GotData.getBooks();
 
-class BooksList extends React.Component {
-  constructor (props) {
-    super();
-    this.state = props;
-  }
-  render () {
-    var books = booksData.map(function(book, i){
+var BooksList = React.createClass({
+  render: function () {
+    var books = _books.map(function(book, i){
       var styles = {
         width: book.chapters.length * 20 + "px",
         borderBottomColor: book.color
@@ -30,6 +24,6 @@ class BooksList extends React.Component {
       </div>
     );
   }
-}
+});
 
 module.exports = BooksList;
