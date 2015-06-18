@@ -2,6 +2,7 @@
 
 var React = require('react/addons');
 var books = require('../static/chapters.json');
+var RelationInfo = require('./RelationInfo');
 
 var bookChapters = [];
 books.forEach(function(item, i){
@@ -13,25 +14,33 @@ books.forEach(function(item, i){
   });
 });
 
-function getChapterColor (chapterNumber) {
+function _getChapterColor (chapter) {
   var bookId = bookChapters.filter(function (item) {
-    return chapterNumber >= item.start && chapterNumber < item.end;
+    return chapter.id >= item.start && chapter.id < item.end;
   })[0].id;
   return books[bookId].color;
 }
 
-function getChapterBook (chapterNumber) {
-  var bookId = bookChapters.filter(function (item) {
-    return chapterNumber >= item.start && chapterNumber < item.end;
+function _getChapterBook (chapter) {
+  return bookChapters.filter(function (item) {
+    return chapter.id >= item.start && chapter.id < item.end;
   })[0].id;
-  return bookId;
 }
 
-function getPrettyEpisodeFormat (episodeId) {
-  var episodesInSeason = 10;
-  var season = Math.floor(episodeId / episodesInSeason) + 1;
-  var episode = episodeId % episodesInSeason + 1;
-  return season + "x" + episode;
+function _highlightTitles (chapter, episode) {
+  var bookId = _getChapterBook(chapter) + 1;
+  document.querySelectorAll('.episode-title')[episode.id]
+    .classList.toggle('book-' + bookId);
+  document.querySelectorAll('.chapter-title')[chapter.id]
+    .classList.toggle('book-' + bookId);
+}
+
+function _getStyles (chapter, episode) {
+  return {
+    left: chapter.id * 20 + "px",
+    top: episode.id * 20 + "px",
+    backgroundColor: _getChapterColor(chapter)
+  };
 }
 
 class RelationBlock extends React.Component {
@@ -43,34 +52,15 @@ class RelationBlock extends React.Component {
     this.setState({
       displayInfo: !this.state.displayInfo
     });
-    var bookId = getChapterBook(this.state.chapter.id) + 1;
-    document.querySelectorAll('.episode-title')[this.state.episode.id]
-      .classList.toggle('book-' + bookId);
-    document.querySelectorAll('.chapter-title')[this.state.chapter.id]
-      .classList.toggle('book-' + bookId);
+    _highlightTitles(this.state.chapter, this.state.episode);
   }
   render () {
-    var relationInfo = "";
-    if (this.state.displayInfo) {
-      relationInfo = (
-        <div className="relation-info">
-          <div className="relation-info-episode">
-            Chapter: {this.state.chapter.title}
-          </div>
-          <div className="relation-info-chapter">
-            Episode: {this.state.episode.title} ({getPrettyEpisodeFormat(this.state.episode.id)})
-          </div>
-        </div>
-      );
-    }
-    var styles = {
-      left: this.state.chapter.id * 20 + "px",
-      top: this.state.episode.id * 20 + "px",
-      backgroundColor: getChapterColor(this.state.chapter.id)
-    };
+    var relationInfo = this.state.displayInfo
+      ? <RelationInfo chapter={this.state.chapter} episode={this.state.episode} />
+      : "";
     return (
       <div className="relation-block"
-           style={styles}
+           style={_getStyles(this.state.chapter, this.state.episode)}
            onMouseOver={this.toggleInfo.bind(this)}
            onMouseLeave={this.toggleInfo.bind(this)}>
         {relationInfo}

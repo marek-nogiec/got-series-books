@@ -10,8 +10,9 @@
   "mainInput": "GotApp",
   "mainOutput": "main",
   "dependencies": {
+    "normalize.css": "~3.0.3",
     "react": "~0.13.3",
-    "normalize.css": "~3.0.3"
+    "reflux": "^0.2.8"
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
