@@ -27,6 +27,12 @@ function getChapterBook (chapterNumber) {
   return bookId;
 }
 
+function getPrettyEpisodeFormat (episodeId) {
+  var episodesInSeason = 10;
+  var season = Math.floor(episodeId / episodesInSeason) + 1;
+  var episode = episodeId % episodesInSeason + 1;
+  return season + "x" + episode;
+}
 
 class RelationBlock extends React.Component {
   constructor (props) {
@@ -52,7 +58,7 @@ class RelationBlock extends React.Component {
             Chapter: {this.state.chapter.title}
           </div>
           <div className="relation-info-chapter">
-            Episode: {this.state.episode.title} ({this.state.episode.id + 1})
+            Episode: {this.state.episode.title} ({getPrettyEpisodeFormat(this.state.episode.id)})
           </div>
         </div>
       );
